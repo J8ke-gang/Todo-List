@@ -1,3 +1,4 @@
 import "./styles.css";
-console.log("Webpack is working!");
+
+const taskForm = Document.getElementById('taskForm');
 
