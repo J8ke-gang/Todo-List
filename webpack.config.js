@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -32,6 +31,16 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.js$/,  // Add this rule to handle JavaScript files
+        exclude: /node_modules/,  // Exclude node_modules
+        use: {
+          loader: "babel-loader",  // Use Babel loader for transpiling
+          options: {
+            presets: ["@babel/preset-env"],  // Use preset-env for modern JavaScript
+          },
+        },
       },
     ],
   },

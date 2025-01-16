@@ -6,11 +6,11 @@ const removeProject = (projectName) => {
   const projectIndex = projects.findIndex(project => project.name === projectName);
 
   if (projectIndex !== -1) {
-    projects.splice(projectIndex, 1); // Remove the project from the array
+    projects.splice(projectIndex, 1);
 
     // If the active project is the one being removed, set activeProject to null or first project
     if (activeProject.name === projectName) {
-      activeProject = projects.length > 0 ? projects[0] : null; // Set to first project or null if no projects
+      activeProject = projects.length > 0 ? projects[0] : null;
     }
     saveToLocalStorage(); // Save changes to localStorage
   } else {
@@ -24,7 +24,7 @@ const createProject = (name) => {
   const newProject = { name, todos: [] };
   projects.push(newProject);
   setActiveProject(name); // Set the newly created project as the active project
-  saveToLocalStorage(); // Save changes to localStorage
+  saveToLocalStorage(); 
 };
 
 // Set the active project by name
@@ -33,7 +33,7 @@ const setActiveProject = (projectName) => {
 
   if (project) {
     activeProject = project;
-    saveToLocalStorage(); // Save changes to localStorage
+    saveToLocalStorage();
   } else {
     console.warn(`Project with name "${projectName}" not found.`);
   }
@@ -45,7 +45,7 @@ const addTodo = (todo) => {
     // Adding the completed property to the todo
     const newTodo = { ...todo, completed: false };
     activeProject.todos.push(newTodo);
-    saveToLocalStorage(); // Save changes to localStorage
+    saveToLocalStorage();
   } else {
     console.warn('No active project to add todo to.');
   }
@@ -55,7 +55,7 @@ const addTodo = (todo) => {
 const removeTodo = (index) => {
   if (activeProject && activeProject.todos[index]) {
     activeProject.todos.splice(index, 1);
-    saveToLocalStorage(); // Save changes to localStorage
+    saveToLocalStorage();
   } else {
     console.warn('Todo not found or no active project.');
   }
@@ -89,7 +89,7 @@ const loadFromLocalStorage = () => {
     if (activeProjectName) {
       activeProject = projects.find(project => project.name === activeProjectName) || projects[0];
     } else {
-      activeProject = projects[0]; // If no active project in localStorage, default to the first project
+      activeProject = projects[0];
     }
   } else {
     console.warn('No projects found in localStorage.');
@@ -101,4 +101,4 @@ const init = () => {
   loadFromLocalStorage();
 };
 
-export { createProject, setActiveProject, addTodo, removeTodo, removeProject, getProjects, getActiveProject, init };
+export { createProject, setActiveProject, addTodo, removeTodo, removeProject, getProjects, getActiveProject, init, saveToLocalStorage };

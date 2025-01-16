@@ -3,7 +3,7 @@ import domManipulation from './domManipulation';
 import './styles.css';
 
 // Initialize the app when the DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
   init();
-  domManipulation.init(); 
+  domManipulation.init();
 });
