@@ -1,4 +1,4 @@
-//import applogic
+//import app logic
 import * as appLogic from './appLogic';
 
 const domManipulation = (() => {
