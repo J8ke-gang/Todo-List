@@ -7,7 +7,7 @@
 
 /* Body */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f3f4f6;
   display: flex;
   justify-content: center;
@@ -75,7 +75,9 @@ header h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 /* Content Section (Project and Task) */
@@ -118,7 +120,9 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -209,7 +213,9 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 button:hover {
@@ -219,7 +225,6 @@ button:hover {
 
 /*for smaller screens*/
 @media (max-width: 768px) {
-
   .content {
     flex-direction: column;
   }

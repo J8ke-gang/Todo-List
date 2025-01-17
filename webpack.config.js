@@ -33,12 +33,12 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.js$/,  // Add this rule to handle JavaScript files
-        exclude: /node_modules/,  // Exclude node_modules
+        test: /\.js$/, // Add this rule to handle JavaScript files
+        exclude: /node_modules/, // Exclude node_modules
         use: {
-          loader: "babel-loader",  // Use Babel loader for transpiling
+          loader: "babel-loader", // Use Babel loader for transpiling
           options: {
-            presets: ["@babel/preset-env"],  // Use preset-env for modern JavaScript
+            presets: ["@babel/preset-env"], // Use preset-env for modern JavaScript
           },
         },
       },

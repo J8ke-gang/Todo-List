@@ -1,52 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To do App</title>
-<script defer src="main.js"></script></head>
-<body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>Todo App</h1>
-      <button id="darkModeToggle">Toggle Dark Mode</button>
-    </header>
-    <div class="content">
-    <!-- Project Section -->
-    <section id="projectsSection">
-      <h2>Projects</h2>
-      <ul id="projectList">
-        <!-- List of projects -->
-      </ul>
-      <form id="projectForm">
-        <input type="text" id="projectName" placeholder="New Project Name" required />
-        <button type="submit">Add Project</button>
-      </form>
-    </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>Todo App</h1>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+      </header>
+      <div class="content">
+        <!-- Project Section -->
+        <section id="projectsSection">
+          <h2>Projects</h2>
+          <ul id="projectList">
+            <!-- List of projects -->
+          </ul>
+          <form id="projectForm">
+            <input
+              type="text"
+              id="projectName"
+              placeholder="New Project Name"
+              required
+            />
+            <button type="submit">Add Project</button>
+          </form>
+        </section>
 
-    <!-- Task Section -->
-    <section id="tasksSection">
-      <h2>Tasks</h2>
-      <ul id="taskList">
-        <!-- List of tasks -->
-      </ul>
+        <!-- Task Section -->
+        <section id="tasksSection">
+          <h2>Tasks</h2>
+          <ul id="taskList">
+            <!-- List of tasks -->
+          </ul>
 
-      <!-- New Task Form -->
-      <form id="taskForm">
-        <input type="text" id="taskTitle" placeholder="Task Title" required />
-        <textarea id="taskDescription" placeholder="Description"></textarea>
-        <input type="date" id="taskDueDate" />
-        <select id="taskPriority">
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
-        <button type="submit">Add Task</button>
-      </form>
-    </section>
-  </div>
-
-  <script type="module" src="23271d21b15823c1fc81.js"></script>
-</body>
+          <!-- New Task Form -->
+          <form id="taskForm">
+            <input
+              type="text"
+              id="taskTitle"
+              placeholder="Task Title"
+              required
+            />
+            <textarea id="taskDescription" placeholder="Description"></textarea>
+            <input type="date" id="taskDueDate" />
+            <select id="taskPriority">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+            <button type="submit">Add Task</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

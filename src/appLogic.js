@@ -1,9 +1,11 @@
-let projects = [{ name: 'Default', todos: [] }];
+let projects = [{ name: "Default", todos: [] }];
 let activeProject = projects[0]; // Default active project
 
 // Remove a project by name
 const removeProject = (projectName) => {
-  const projectIndex = projects.findIndex(project => project.name === projectName);
+  const projectIndex = projects.findIndex(
+    (project) => project.name === projectName,
+  );
 
   if (projectIndex !== -1) {
     projects.splice(projectIndex, 1);
@@ -24,12 +26,12 @@ const createProject = (name) => {
   const newProject = { name, todos: [] };
   projects.push(newProject);
   setActiveProject(name); // Set the newly created project as the active project
-  saveToLocalStorage(); 
+  saveToLocalStorage();
 };
 
 // Set the active project by name
 const setActiveProject = (projectName) => {
-  const project = projects.find(project => project.name === projectName);
+  const project = projects.find((project) => project.name === projectName);
 
   if (project) {
     activeProject = project;
@@ -47,7 +49,7 @@ const addTodo = (todo) => {
     activeProject.todos.push(newTodo);
     saveToLocalStorage();
   } else {
-    console.warn('No active project to add todo to.');
+    console.warn("No active project to add todo to.");
   }
 };
 
@@ -57,7 +59,7 @@ const removeTodo = (index) => {
     activeProject.todos.splice(index, 1);
     saveToLocalStorage();
   } else {
-    console.warn('Todo not found or no active project.');
+    console.warn("Todo not found or no active project.");
   }
 };
 
@@ -70,29 +72,31 @@ const getActiveProject = () => activeProject;
 // Save the projects and active project to localStorage
 const saveToLocalStorage = () => {
   if (activeProject && activeProject.name) {
-    localStorage.setItem('projects', JSON.stringify(projects));
-    localStorage.setItem('activeProject', activeProject.name);
+    localStorage.setItem("projects", JSON.stringify(projects));
+    localStorage.setItem("activeProject", activeProject.name);
   } else {
-    console.warn('No active project or invalid active project.');
+    console.warn("No active project or invalid active project.");
   }
 };
 
 // Load the projects and active project from localStorage
 const loadFromLocalStorage = () => {
-  const savedProjects = JSON.parse(localStorage.getItem('projects'));
-  
+  const savedProjects = JSON.parse(localStorage.getItem("projects"));
+
   if (savedProjects && Array.isArray(savedProjects)) {
     projects = savedProjects;
 
-    const activeProjectName = localStorage.getItem('activeProject');
+    const activeProjectName = localStorage.getItem("activeProject");
     // If the active project name exists, find the corresponding project, or set to the first project
     if (activeProjectName) {
-      activeProject = projects.find(project => project.name === activeProjectName) || projects[0];
+      activeProject =
+        projects.find((project) => project.name === activeProjectName) ||
+        projects[0];
     } else {
       activeProject = projects[0];
     }
   } else {
-    console.warn('No projects found in localStorage.');
+    console.warn("No projects found in localStorage.");
   }
 };
 
@@ -101,4 +105,14 @@ const init = () => {
   loadFromLocalStorage();
 };
 
-export { createProject, setActiveProject, addTodo, removeTodo, removeProject, getProjects, getActiveProject, init, saveToLocalStorage };
+export {
+  createProject,
+  setActiveProject,
+  addTodo,
+  removeTodo,
+  removeProject,
+  getProjects,
+  getActiveProject,
+  init,
+  saveToLocalStorage,
+};
