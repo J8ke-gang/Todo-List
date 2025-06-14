@@ -1,5 +1,24 @@
-# Todo-List
--User can create,edit,delete and select projects <br>
--Each to do has a title section, description, due date, priority and any notes you want to make.<br>
--User can mark project as complete change importance or delete project <br>
--Simple lay out nothing fancy will work on mobile and has a dark mode or light mode toggle.
+# Todo App
+
+A simple Todo app with dark mode toggle, project and task management.
+
+## 📦Features
+
+- Add, edit, and delete projects
+- Add, complete, and delete tasks
+- Toggle dark mode for better viewing at night
+- Responsive design for mobile and desktop
+
+## 🖼️ Preview
+
+![light mode](<Screenshot 2025-06-14 122630.png>)
+![dark mode](<Screenshot 2025-06-14 122637-1.png>)
+
+## 🛠️ Technologies Used
+
+-HTML5
+-CSS
+-JavaScript
+-Webpack
+-Git & GitHub
+-Babel

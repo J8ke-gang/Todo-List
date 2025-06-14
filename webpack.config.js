@@ -1,7 +1,11 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { fileURLToPath } from 'url';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
   mode: "development",
   entry: "./src/index.js",
   output: {
@@ -33,12 +37,12 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.js$/, // Add this rule to handle JavaScript files
-        exclude: /node_modules/, // Exclude node_modules
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: "babel-loader", // Use Babel loader for transpiling
+          loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"], // Use preset-env for modern JavaScript
+            presets: ["@babel/preset-env"],
           },
         },
       },
